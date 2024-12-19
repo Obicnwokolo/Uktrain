@@ -2,31 +2,29 @@ package spark
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
+import org.apache.spark.sql.{SparkSession, DataFrame}
 
 object rides {
   def main(args: Array[String]): Unit = {
+    // Create Spark session
     val spark = SparkSession.builder()
-      .appName("DataTransformations")
+      .appName("PostgreSQLExample")
       .master("local[*]")
       .getOrCreate()
 
-    // File Path
-    val filePath = "C:/Users/chigb/Downloads/railway.csv"
-    //val df = spark.read
-      //.option("header", "true")
-      //.option("inferSchema", "true")
-      //.csv("file:///C:/Users/chigb/Downloads/railway.csv")
-    //df.show(5)
+    // Define JDBC connection parameters
+    val jdbcUrl = "jdbc:postgresql://18.132.73.146:5432/testdb"
+    val dbProperties = new java.util.Properties()
+    dbProperties.setProperty("user", "consultants")  // Your database username
+    dbProperties.setProperty("password", "WelcomeItc@2022")  // Your database password
+    dbProperties.setProperty("driver", "org.postgresql.Driver")
 
-    // 1. Read the CSV File
+    // Read data from the PostgreSQL table into a DataFrame
     val df = spark.read
-      .option("header", "true") // Treat the first row as headers
-      .option("inferSchema", "true") // Infer data types automatically
-      .csv(filePath)
+      .jdbc(jdbcUrl, "railway.csv", dbProperties)  // Replace "your_table_name" with your table name
 
-    println("Original DataFrame:")
+    // Show the first 5 rows of the DataFrame
     df.show(5)
-    df.printSchema() // Print schema to verify column names and types
 
     // 2. Filter data where Payment Method == "Credit Card"
     val filteredDF = df.filter(col("Payment Method") === "Credit Card")
