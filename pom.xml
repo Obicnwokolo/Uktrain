@@ -12,7 +12,7 @@
   <properties>
     <scala.version>2.11.12</scala.version>
     <!--    Added to add spark version details-->
-    <scala.binary.version>2.12</scala.binary.version>
+    <scala.binary.version>2.11</scala.binary.version>
     <spark.version>2.4.7</spark.version>
   </properties>
 
@@ -27,7 +27,7 @@
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-catalyst -->
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-catalyst_2.12</artifactId>
+      <artifactId>spark-catalyst_2.11</artifactId>
       <version>2.4.7</version>
       <scope>test</scope>
     </dependency>
