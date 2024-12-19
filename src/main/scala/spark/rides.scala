@@ -21,7 +21,7 @@ object rides {
 
     // Read data from the PostgreSQL table into a DataFrame
     val df = spark.read
-      .jdbc(jdbcUrl, "railway.csv", dbProperties)  // Replace "your_table_name" with your table name
+      .jdbc(jdbcUrl, "railway", dbProperties)  // Replace "your_table_name" with your table name
 
     // Show the first 5 rows of the DataFrame
     df.show(5)
