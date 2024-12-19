@@ -11,18 +11,18 @@ object rides {
       .getOrCreate()
 
     // File Path
-    val df = spark.read
-      .option("header", "true")
-      .option("inferSchema", "true")
-      .csv("file:///C:/Users/chigb/Downloads/railway.csv")
-
-    df.show(5)
+    val filePath = "file:///C:/Users/chigb/Downloads/railway.csv"
+    //val df = spark.read
+      //.option("header", "true")
+      //.option("inferSchema", "true")
+      //.csv("file:///C:/Users/chigb/Downloads/railway.csv")
+    //df.show(5)
 
     // 1. Read the CSV File
-    //val df = spark.read
-      //.option("header", "true") // Treat the first row as headers
-      //.option("inferSchema", "true") // Infer data types automatically
-     // .csv(filePath)
+    val df = spark.read
+      .option("header", "true") // Treat the first row as headers
+      .option("inferSchema", "true") // Infer data types automatically
+      .csv(filePath)
 
     println("Original DataFrame:")
     df.show(5)
