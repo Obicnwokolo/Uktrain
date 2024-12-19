@@ -12,7 +12,7 @@ object rides {
       .getOrCreate()
 
     // 1. Read the CSV File
-    val filePath = "C:\\Users\\chigb\\Downloads\\railway.csv"
+    val filePath = "C:/Users/chigb/Downloads/railway.csv"
     val df = spark.read
       .option("header", "true")
       .option("inferSchema", "true")
