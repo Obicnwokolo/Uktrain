@@ -32,7 +32,7 @@ object rides {
     filteredDF.show(5)
 
     // 3. Select specific columns
-    val selectedColumnsDF = df.select("Transaction ID", "Time of Purchase", "Purchase Type", "Price")
+    val selectedColumnsDF = df.select("Time of Purchase", "Purchase Type", "Price")
     println("Selected Columns DataFrame:")
     selectedColumnsDF.show(5)
 
