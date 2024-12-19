@@ -17,27 +17,25 @@
 
   <dependencies>
 
-    <!-- Spark Core -->
+    <!-- Spark Core for Scala 2.11 -->
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_2.11</artifactId>
       <version>2.4.7</version>
     </dependency>
 
-    <!-- Spark SQL -->
+    <!-- Spark SQL for Scala 2.11 -->
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_2.11</artifactId>
       <version>2.4.7</version>
-      <scope>provided</scope>
     </dependency>
 
-    <!-- Spark Catalyst (Optional) -->
+    <!-- Spark Catalyst for Scala 2.11 -->
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-catalyst_2.11</artifactId>
       <version>2.4.7</version>
-      <scope>test</scope>
     </dependency>
 
     <!-- Additional dependencies can be added here -->
