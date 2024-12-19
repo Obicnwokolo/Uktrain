@@ -46,6 +46,11 @@ object rides {
     println("Final DataFrame (without Railcard):")
     finalDF.show(5)
 
+    // Write DataFrame to Hive table
+    df.write
+      .mode("overwrite")  // Use append for adding data without overwriting
+      .saveAsTable("bigdata_nov_2024.railway")  // Specify your database and table name
+
     // Stop SparkSession
     spark.stop()
   }
