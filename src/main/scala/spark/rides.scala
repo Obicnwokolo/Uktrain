@@ -27,12 +27,12 @@ object rides {
     df.show(5)
 
     // 2. Filter data where Payment Method == "Credit Card"
-    val filteredDF = df.filter(col("Payment Method") === "Credit Card")
+    val filteredDF = df.filter(col("Payment_Method") === "Credit Card")
     println("Filtered DataFrame (Payment Method == 'Credit Card'):")
     filteredDF.show(5)
 
     // 3. Select specific columns
-    val selectedColumnsDF = df.select("Time of Purchase", "Purchase Type", "Price")
+    val selectedColumnsDF = df.select("Time_of_Purchase", "Purchase_Type", "Price")
     println("Selected Columns DataFrame:")
     selectedColumnsDF.show(5)
 
